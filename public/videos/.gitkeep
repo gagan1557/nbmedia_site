@@ -1,0 +1,14 @@
+
+# NB Media Videos
+
+This directory should contain the following video files:
+- nbmedia_video1.mp4
+- nbmedia_video2.mp4
+- nbmedia_video3.mp4
+
+To make the videos work properly:
+1. Download the videos from Google Drive
+2. Name them exactly as listed above
+3. Place them in this directory (public/videos/)
+
+If you encounter any issues, the app will automatically use fallback videos.
