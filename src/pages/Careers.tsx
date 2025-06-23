@@ -65,7 +65,11 @@ const Careers = () => {
   }, {
     icon: Gift,
     title: "Learning Budget",
+<<<<<<< HEAD
     description: "₹50k/year to spend on courses, books, or conferences."
+=======
+    description: "$1000/year to spend on courses, books, or conferences."
+>>>>>>> 022cb4cc2920b214b9a8054ad7cc34b8284bfb48
   }];
   
   const faqItems = [{

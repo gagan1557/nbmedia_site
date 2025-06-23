@@ -285,6 +285,7 @@ const Index = () => {
       <FAQ />
       
       {/* Join Our Team Button - Moved from Footer */}
+<<<<<<< HEAD
       <Section padding="lg" maxWidth="7xl" className="text-center flex items-center justify-center">
         <div className="w-full flex justify-center">
           <Link to="/careers">
@@ -294,6 +295,15 @@ const Index = () => {
             </Button>
           </Link>
         </div>
+=======
+      <Section padding="sm" maxWidth="7xl" className="text-center">
+        <Link to="/careers">
+          <Button size="lg" className="bg-gradient-to-r from-nborange to-nbyellow text-white font-medium px-8 py-6 rounded-md transition-all duration-500 hover:shadow-glow hover:scale-105 flex items-center gap-2">
+            <BriefcaseBusiness className="w-5 h-5" />
+            Join Our Team
+          </Button>
+        </Link>
+>>>>>>> 022cb4cc2920b214b9a8054ad7cc34b8284bfb48
       </Section>
       
       <Footer />
