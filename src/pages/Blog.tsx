@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -83,7 +82,7 @@ const Blog = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-nbdark text-white overflow-hidden hide-cursor">
+    <div className="relative min-h-screen bg-nbdark text-white overflow-hidden">
       <AnimatedCursor />
       <Navbar />
       

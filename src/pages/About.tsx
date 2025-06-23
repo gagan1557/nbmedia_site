@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -11,28 +10,73 @@ import OptimizedImage from '../components/OptimizedImage';
 import { initializePerformanceOptimizations } from '../utils/preloadResources';
 
 const About = () => {
-  // For intersection observer animations
+  const pageRef = useRef<HTMLDivElement>(null);
+
+  // For intersection observer animations & parallax
   useEffect(() => {
     // Initialize performance optimizations
     initializePerformanceOptimizations();
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '50px'
-    });
-    
-    // Use a more efficient selector and batched operations
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '50px',
+      }
+    );
+
     const hiddenElements = document.querySelectorAll('.hidden-element');
     hiddenElements.forEach(element => observer.observe(element));
-    
+
+    let animationFrameId: number | null = null;
+    const handleScroll = () => {
+      if (animationFrameId !== null) return;
+
+      animationFrameId = window.requestAnimationFrame(() => {
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+        const scrollPercent = scrollTop / (scrollHeight - clientHeight);
+
+        // Parallax for hero gradients
+        const heroGradients = document.querySelectorAll('.hero-gradient');
+        heroGradients.forEach(el => {
+          const htmlEl = el as HTMLElement;
+          const speed = parseFloat(htmlEl.dataset.speed || '0');
+          htmlEl.style.transform = `translateY(${scrollTop * speed}px)`;
+        });
+
+        // Animate timeline line
+        const timelineLine = document.querySelector('.timeline-line') as HTMLElement;
+        if (timelineLine) {
+          const timelineSection = timelineLine.closest('section');
+          if (timelineSection) {
+            const sectionTop = timelineSection.offsetTop;
+            const sectionHeight = timelineSection.offsetHeight;
+            const scrollPos = scrollTop + clientHeight;
+
+            if (scrollPos > sectionTop) {
+              const height = Math.min(scrollPos - sectionTop, sectionHeight);
+              timelineLine.style.height = `${height}px`;
+            }
+          }
+        }
+        animationFrameId = null;
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
     return () => {
       observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+      if (animationFrameId) {
+        window.cancelAnimationFrame(animationFrameId);
+      }
     };
   }, []);
 
@@ -61,24 +105,24 @@ const About = () => {
     title: 'Today',
     description: 'Now 90 team members strong, leading India\'s YouTube content creation.'
   }];
-  return <div className="relative min-h-screen bg-nbdark text-white overflow-hidden hide-cursor">
+  return <div ref={pageRef} className="relative min-h-screen bg-nbdark text-white overflow-hidden">
       <AnimatedCursor />
       <Navbar />
       
       <div className="pt-24 md:pt-32">
         {/* Hero Section */}
         <Section className="relative overflow-hidden">
-          <div className="absolute top-1/4 -left-64 w-96 h-96 rounded-full bg-nborange/20 blur-[100px] will-change-transform"></div>
-          <div className="absolute bottom-0 -right-64 w-96 h-96 rounded-full bg-nbyellow/10 blur-[100px] will-change-transform"></div>
+          <div className="hero-gradient absolute top-1/4 -left-64 w-96 h-96 rounded-full bg-nborange/20 blur-[100px] will-change-transform" data-speed="0.1"></div>
+          <div className="hero-gradient absolute bottom-0 -right-64 w-96 h-96 rounded-full bg-nbyellow/10 blur-[100px] will-change-transform" data-speed="0.05"></div>
           
           <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold font-display mb-6 hidden-element opacity-0 animate-fade-in" style={{
+            <h1 className="text-4xl md:text-6xl font-bold font-display mb-6 hidden-element" style={{
             animationDelay: "0.2s",
             animationFillMode: "forwards"
           }}>
               Our <span className="text-gradient">Story</span>
             </h1>
-            <p className="text-lg md:text-xl text-nbgray mb-12 hidden-element opacity-0 animate-fade-in" style={{
+            <p className="text-lg md:text-xl text-nbgray mb-12 hidden-element" style={{
             animationDelay: "0.4s",
             animationFillMode: "forwards"
           }}>
@@ -89,7 +133,7 @@ const About = () => {
         
         {/* Timeline Section */}
         <Section className="relative">
-          <h2 className="text-3xl md:text-4xl font-bold font-display mb-12 text-center hidden-element opacity-0 animate-fade-in" style={{
+          <h2 className="text-3xl md:text-4xl font-bold font-display mb-12 text-center hidden-element" style={{
           animationDelay: "0.6s",
           animationFillMode: "forwards"
         }}>
@@ -98,16 +142,17 @@ const About = () => {
           
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-nborange to-nbyellow opacity-30"></div>
+            <div className="timeline-line-bg absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-white/10"></div>
+            <div className="timeline-line absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 w-1 bg-gradient-to-b from-nborange to-nbyellow"></div>
             
             {/* Timeline events */}
             <div className="space-y-12 md:space-y-24 relative z-10">
-              {timelineData.map((item, index) => <div key={item.year} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-8 hidden-element opacity-0 animate-fade-in`} style={{
+              {timelineData.map((item, index) => <div key={item.year} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-8 hidden-element`} style={{
               animationDelay: `${0.8 + index * 0.2}s`,
               animationFillMode: "forwards"
             }}>
-                  <div className="w-full md:w-1/2 text-center md:text-right md:pr-8">
-                    <div className={index % 2 === 0 ? 'md:text-right' : 'md:text-left'}>
+                  <div className="w-full md:w-1/2">
+                    <div className={index % 2 === 0 ? 'md:text-right md:pr-8' : 'md:text-left md:pl-8'}>
                       <span className="text-gradient font-display text-3xl font-bold">{item.year}</span>
                       <h3 className="text-xl font-bold mt-2 mb-3">{item.title}</h3>
                       <p className="text-nbgray">{item.description}</p>
@@ -115,9 +160,9 @@ const About = () => {
                   </div>
                   
                   {/* Timeline node */}
-                  <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-gradient-to-r from-nborange to-nbyellow shadow-glow will-change-transform"></div>
+                  <div className="timeline-node hidden md:block absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-gradient-to-r from-nborange to-nbyellow shadow-glow will-change-transform"></div>
                   
-                  <div className="w-full md:w-1/2 md:pl-8">
+                  <div className="w-full md:w-1/2">
                     {/* Show specific images for each year with optimized image component */}
                     {index === 0 ? (
                       <div className="h-full w-full rounded-lg overflow-hidden transition-transform hover:scale-[1.02] duration-500">
@@ -183,7 +228,7 @@ const About = () => {
             </div>
           </div>
           
-          <div className="mt-12 text-center hidden-element opacity-0 animate-fade-in" style={{
+          <div className="mt-12 text-center hidden-element" style={{
           animationDelay: "2.2s",
           animationFillMode: "forwards"
         }}>
@@ -194,7 +239,7 @@ const About = () => {
         {/* Founder Story */}
         <Section className="bg-black/30 backdrop-blur-sm">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 hidden-element opacity-0 animate-fade-in" style={{
+            <div className="space-y-6 hidden-element" style={{
             animationDelay: "1.8s",
             animationFillMode: "forwards"
           }}>
@@ -210,16 +255,17 @@ const About = () => {
               <p className="italic font-medium text-white">– Nikit Bassi, Founder & CEO</p>
             </div>
             
-            <div className="relative hidden-element opacity-0 animate-fade-in" style={{
+            <div className="relative hidden-element" style={{
             animationDelay: "2s",
             animationFillMode: "forwards"
           }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-nborange to-nbyellow opacity-20 rounded-2xl transform rotate-3 will-change-transform"></div>
-              <div className="relative aspect-square rounded-2xl overflow-hidden">
+              {/* <div className="absolute inset-0 bg-gradient-to-br from-nborange to-nbyellow opacity-20 rounded-2xl transform rotate-3 will-change-transform"></div> */}
+              <div className="relative aspect-square rounded-2xl overflow-hidden parallax-container">
                 <OptimizedImage 
-                  src="/lovable-uploads/9e22850f-ecfe-4d86-a563-9fb73cdcd6da.png"
+                  src="/lovable-uploads/18bb5ad0-b108-4ced-a976-89362974ea1a.png"
                   alt="NB Media Founder" 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105 parallax-element"
+                  data-speed="0.05"
                   priority={true}
                 />
               </div>
@@ -229,7 +275,7 @@ const About = () => {
         
         {/* Values Section */}
         <Section>
-          <h2 className="text-3xl md:text-4xl font-bold font-display mb-12 text-center hidden-element opacity-0 animate-fade-in" style={{
+          <h2 className="text-3xl md:text-4xl font-bold font-display mb-12 text-center hidden-element" style={{
           animationDelay: "2.2s",
           animationFillMode: "forwards"
         }}>
@@ -246,7 +292,7 @@ const About = () => {
           }, {
             title: "Win-Win-Win",
             description: "Our audience wins. Our creators win. Our partners win."
-          }].map((value, index) => <Card key={value.title} className="bg-white/5 border-white/10 backdrop-blur-sm overflow-hidden group relative hidden-element opacity-0 animate-fade-in" style={{
+          }].map((value, index) => <Card key={value.title} className="bg-white/5 border-white/10 backdrop-blur-sm overflow-hidden group relative hidden-element" style={{
             animationDelay: `${2.4 + index * 0.2}s`,
             animationFillMode: "forwards"
           }}>
@@ -258,7 +304,7 @@ const About = () => {
               </Card>)}
           </div>
           
-          <div className="mt-16 text-center hidden-element opacity-0 animate-fade-in" style={{
+          <div className="mt-16 text-center hidden-element" style={{
           animationDelay: "3s",
           animationFillMode: "forwards"
         }}>
@@ -281,9 +327,30 @@ const About = () => {
           transition: all 1s cubic-bezier(0.17, 0.55, 0.55, 1);
         }
         
+        .timeline-node {
+          transition: all 0.5s ease;
+          transform: translate(-50%, -50%) scale(0);
+        }
+        
         .hidden-element.show {
           opacity: 1;
           transform: translateY(0);
+        }
+
+        .hidden-element.show .timeline-node {
+          transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .timeline-line {
+          height: 0;
+          transition: height 0.1s linear;
+        }
+        
+        .parallax-container {
+          overflow: hidden;
+        }
+        .parallax-element {
+          transition: transform 0.2s cubic-bezier(0, 0, 0, 1);
         }
         
         .shadow-glow {

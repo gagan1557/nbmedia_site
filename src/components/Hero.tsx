@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ScrollArea } from './ui/scroll-area';
 import { ChevronDown } from 'lucide-react';
@@ -9,28 +8,38 @@ const Hero: React.FC = () => {
   useEffect(() => {
     if (!heroRef.current) return;
 
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!heroRef.current) return;
-      
-      const { clientX, clientY } = e;
+    let animationFrameId: number | null = null;
+    let lastEvent: MouseEvent | null = null;
+
+    const updateAnimation = () => {
+      if (!heroRef.current || !lastEvent) return;
+      const { clientX, clientY } = lastEvent;
       const { left, top, width, height } = heroRef.current.getBoundingClientRect();
-      
       const x = (clientX - left) / width - 0.5;
       const y = (clientY - top) / height - 0.5;
-      
       const headingElements = heroRef.current.querySelectorAll('.animate-on-mouse');
-      
       headingElements.forEach((element, index) => {
         const factor = (index + 1) * 5;
         const htmlElement = element as HTMLElement;
         htmlElement.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
       });
+      animationFrameId = null;
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      lastEvent = e;
+      if (animationFrameId === null) {
+        animationFrameId = window.requestAnimationFrame(updateAnimation);
+      }
     };
 
     document.addEventListener('mousemove', handleMouseMove);
     
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
+      if (animationFrameId !== null) {
+        window.cancelAnimationFrame(animationFrameId);
+      }
     };
   }, []);
 

@@ -84,7 +84,7 @@ const Index = () => {
       document.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
-  return <div className="relative min-h-screen bg-nbdark text-white hide-cursor">
+  return <div className="relative min-h-screen bg-nbdark text-white">
       <AnimatedCursor />
       <Navbar />
       

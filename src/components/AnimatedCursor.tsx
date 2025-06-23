@@ -1,5 +1,4 @@
-
-import React, { useEffect, useState } from 'react';
+  import React, { useEffect, useState } from 'react';
 
 const AnimatedCursor: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -78,34 +77,38 @@ const AnimatedCursor: React.FC = () => {
   } ${linkHovered ? 'mix-blend-difference' : ''}`;
 
   const cursorOuterStyle = {
-    transform: `translate(${position.x - 16}px, ${position.y - 16}px)`,
-    width: clicked ? '28px' : linkHovered ? '40px' : '32px',
-    height: clicked ? '28px' : linkHovered ? '40px' : '32px',
+    transform: `translate(${position.x - 20}px, ${position.y - 20}px)`,
+    width: clicked ? '36px' : linkHovered ? '48px' : '40px',
+    height: clicked ? '36px' : linkHovered ? '48px' : '40px',
+    boxShadow: linkHovered ? '0 0 16px 4px rgba(255,186,0,0.4)' : '0 2px 8px 0 rgba(255,186,0,0.15)',
+    transition: 'box-shadow 0.2s',
   };
 
   const cursorInnerStyle = {
-    transform: `translate(${position.x - 4}px, ${position.y - 4}px)`,
-    width: clicked ? '4px' : '8px',
-    height: clicked ? '4px' : '8px',
+    transform: `translate(${position.x - 6}px, ${position.y - 6}px)`,
+    width: clicked ? '8px' : '12px',
+    height: clicked ? '8px' : '12px',
+    background: linkHovered
+      ? 'linear-gradient(90deg, #FFB800 0%, #FF6A00 100%)'
+      : 'white',
+    boxShadow: clicked ? '0 0 16px 4px #FFB800' : 'none',
   };
 
-  // Don't show custom cursor on mobile/touch devices
-  if (typeof window !== 'undefined' && 'ontouchstart' in window) {
-    return null;
-  }
+  // Spark effect for click
+  const sparkStyle = {
+    position: 'fixed' as const,
+    left: position.x - 24,
+    top: position.y - 24,
+    width: 48,
+    height: 48,
+    pointerEvents: 'none' as const,
+    zIndex: 51,
+    opacity: clicked ? 1 : 0,
+    transition: 'opacity 0.2s',
+  };
 
-  return (
-    <>
-      <div
-        className={`${cursorClasses} rounded-full border border-white transition-all duration-200`}
-        style={cursorOuterStyle}
-      ></div>
-      <div
-        className={`${cursorClasses} rounded-full bg-white transition-all duration-200`}
-        style={cursorInnerStyle}
-      ></div>
-    </>
-  );
+  // Disable custom cursor and use default system cursor
+  return null;
 };
 
 export default AnimatedCursor;

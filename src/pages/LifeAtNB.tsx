@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -33,7 +32,7 @@ const LifeAtNBPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-nbdark text-white overflow-hidden hide-cursor">
+    <div className="relative min-h-screen bg-nbdark text-white overflow-hidden">
       <AnimatedCursor />
       <Navbar />
       

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import Section from './Section';
 import OptimizedImage from './OptimizedImage';
@@ -19,27 +18,33 @@ const AboutUs: React.FC = () => {
     const hiddenElements = document.querySelectorAll('.hidden-element');
     hiddenElements.forEach(element => observer.observe(element));
 
+    let animationFrameId: number | null = null;
     const handleScroll = () => {
-      if (sectionRef.current) {
-        const scrollPos = window.scrollY;
-        const sectionPos = sectionRef.current.offsetTop;
-        const distance = scrollPos - sectionPos;
-        
-        // Apply parallax effect to elements with .parallax class
-        const parallaxElements = document.querySelectorAll('.parallax');
-        parallaxElements.forEach((elem, i) => {
-          const htmlElem = elem as HTMLElement;
-          const speed = 0.05 + (i * 0.02);
-          htmlElem.style.transform = `translateY(${distance * speed}px)`;
-        });
-      }
+      if (animationFrameId !== null) return;
+      animationFrameId = window.requestAnimationFrame(() => {
+        if (sectionRef.current) {
+          const scrollPos = window.scrollY;
+          const sectionPos = sectionRef.current.offsetTop;
+          const distance = scrollPos - sectionPos;
+          // Apply parallax effect to elements with .parallax class
+          const parallaxElements = document.querySelectorAll('.parallax');
+          parallaxElements.forEach((elem, i) => {
+            const htmlElem = elem as HTMLElement;
+            const speed = 0.05 + (i * 0.02);
+            htmlElem.style.transform = `translateY(${distance * speed}px)`;
+          });
+        }
+        animationFrameId = null;
+      });
     };
-    
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       hiddenElements.forEach(element => observer.unobserve(element));
       window.removeEventListener('scroll', handleScroll);
+      if (animationFrameId !== null) {
+        window.cancelAnimationFrame(animationFrameId);
+      }
     };
   }, []);
 

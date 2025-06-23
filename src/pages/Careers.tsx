@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -86,7 +85,7 @@ const Careers = () => {
     answer: "Express yourself! Unless you're on camera or meeting clients, wear whatever makes you comfortable and creative. Yes, that includes pajamas on WFH days."
   }];
   
-  return <div className="relative min-h-screen bg-nbdark text-white overflow-hidden hide-cursor">
+  return <div className="relative min-h-screen bg-nbdark text-white overflow-hidden">
       <AnimatedCursor />
       <Navbar />
       
