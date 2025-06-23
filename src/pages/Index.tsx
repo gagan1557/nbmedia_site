@@ -9,6 +9,7 @@ import CountUp from '@/components/CountUp';
 import FAQ from '@/components/FAQ';
 import Section from '@/components/Section';
 import OptimizedImage from '@/components/OptimizedImage';
+
 const Index = () => {
   // Smooth scroll for anchor links
   useEffect(() => {
@@ -84,7 +85,9 @@ const Index = () => {
       document.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
-  return <div className="relative min-h-screen bg-nbdark text-white">
+
+  return (
+    <div className="relative min-h-screen bg-nbdark text-white">
       <AnimatedCursor />
       <Navbar />
       
@@ -97,50 +100,32 @@ const Index = () => {
         <div className="max-w-6xl mx-auto relative z-10">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-6 font-display text-balance">
             <div className="overflow-hidden mb-2">
-              <span className="inline-block parallax-element opacity-0 animate-fade-in" style={{
-              animationDelay: "0.4s",
-              animationFillMode: "forwards"
-            }}>
+              <span className="inline-block parallax-element opacity-0 animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
                 We don't just
               </span>
             </div>
             <div className="overflow-hidden mb-2">
-              <span className="inline-block parallax-element text-gradient opacity-0 animate-fade-in" style={{
-              animationDelay: "0.8s",
-              animationFillMode: "forwards"
-            }}>
+              <span className="inline-block parallax-element text-gradient opacity-0 animate-fade-in" style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}>
                 create content.
               </span>
             </div>
             <div className="overflow-hidden mb-2">
-              <span className="inline-block parallax-element opacity-0 animate-fade-in" style={{
-              animationDelay: "1.2s",
-              animationFillMode: "forwards"
-            }}>
+              <span className="inline-block parallax-element opacity-0 animate-fade-in" style={{ animationDelay: "1.2s", animationFillMode: "forwards" }}>
                 We create the
               </span>
             </div>
             <div className="overflow-hidden">
-              <span className="inline-block parallax-element text-gradient opacity-0 animate-fade-in" style={{
-              animationDelay: "1.6s",
-              animationFillMode: "forwards"
-            }}>
+              <span className="inline-block parallax-element text-gradient opacity-0 animate-fade-in" style={{ animationDelay: "1.6s", animationFillMode: "forwards" }}>
                 future of YouTube.
               </span>
             </div>
           </h1>
           
-          <p className="text-lg md:text-xl text-nbgray max-w-2xl mx-auto text-center mt-8 opacity-0 animate-fade-in" style={{
-          animationDelay: "2s",
-          animationFillMode: "forwards"
-        }}>
+          <p className="text-lg md:text-xl text-nbgray max-w-2xl mx-auto text-center mt-8 opacity-0 animate-fade-in" style={{ animationDelay: "2s", animationFillMode: "forwards" }}>
             NB Media is the undisputed leader in YouTube content creation with a vibrant, Gen Z-friendly culture.
           </p>
           
-          <div className="flex justify-center mt-12 opacity-0 animate-fade-in" style={{
-          animationDelay: "2.4s",
-          animationFillMode: "forwards"
-        }}>
+          <div className="flex justify-center mt-12 opacity-0 animate-fade-in" style={{ animationDelay: "2.4s", animationFillMode: "forwards" }}>
             <Link to="/careers" className="w-auto">
               <Button size="lg" className="bg-gradient-to-r from-nborange to-nbyellow text-white font-medium px-8 py-6 rounded-md transition-all duration-500 hover:shadow-glow hover:scale-105">
                 Join Our Team
@@ -205,12 +190,14 @@ const Index = () => {
           number: 5,
           suffix: "+",
           label: "Years of Growth"
-        }].map(stat => <div key={stat.label} className="text-center">
-                <h3 className="text-4xl md:text-5xl font-bold font-display text-gradient mb-2">
-                  <CountUp end={stat.number} suffix={stat.suffix} className="text-gradient" />
-                </h3>
-                <p className="text-nbgray">{stat.label}</p>
-              </div>)}
+        }].map(stat => (
+            <div key={stat.label} className="text-center">
+              <h3 className="text-4xl md:text-5xl font-bold font-display text-gradient mb-2">
+                <CountUp end={stat.number} suffix={stat.suffix} className="text-gradient" />
+              </h3>
+              <p className="text-nbgray">{stat.label}</p>
+            </div>
+          ))}
         </div>
       </Section>
       
@@ -285,25 +272,15 @@ const Index = () => {
       <FAQ />
       
       {/* Join Our Team Button - Moved from Footer */}
-<<<<<<< HEAD
       <Section padding="lg" maxWidth="7xl" className="text-center flex items-center justify-center">
         <div className="w-full flex justify-center">
-          <Link to="/careers">
+          <Link to="/careers" className="w-auto">
             <Button size="lg" className="bg-gradient-to-r from-nborange to-nbyellow text-white font-medium px-8 py-6 rounded-md transition-all duration-500 hover:shadow-glow hover:scale-105 flex items-center gap-2">
               <BriefcaseBusiness className="w-5 h-5" />
               Join Our Team
             </Button>
           </Link>
         </div>
-=======
-      <Section padding="sm" maxWidth="7xl" className="text-center">
-        <Link to="/careers">
-          <Button size="lg" className="bg-gradient-to-r from-nborange to-nbyellow text-white font-medium px-8 py-6 rounded-md transition-all duration-500 hover:shadow-glow hover:scale-105 flex items-center gap-2">
-            <BriefcaseBusiness className="w-5 h-5" />
-            Join Our Team
-          </Button>
-        </Link>
->>>>>>> 022cb4cc2920b214b9a8054ad7cc34b8284bfb48
       </Section>
       
       <Footer />
@@ -339,6 +316,8 @@ const Index = () => {
         }
       `
     }} />
-    </div>;
+    </div>
+  );
 };
-export default Index;
+
+export default Index; 
