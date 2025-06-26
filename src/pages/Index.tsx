@@ -215,7 +215,7 @@ const Index = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 hidden-element">
           <div className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
             <div className="absolute inset-0 bg-gradient-to-t from-nbdark via-transparent to-transparent z-10"></div>
-            <OptimizedImage src="/lovable-uploads/1d043cdc-673c-4c86-980f-888c5cd030c3.png" alt="NB Media team culture" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+            <OptimizedImage src="/lovable-uploads/TEAM CULTURE.jpg" alt="NB Media team culture" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
             <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
               <h3 className="text-xl font-bold mb-2">Team Culture</h3>
               <p className="text-nbgray text-sm">Where creativity meets collaboration in a dynamic environment.</p>
@@ -224,7 +224,7 @@ const Index = () => {
           
           <div className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
             <div className="absolute inset-0 bg-gradient-to-t from-nbdark via-transparent to-transparent z-10"></div>
-            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2" alt="NB Media office" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+            <img src="/lovable-uploads/behind.png" alt="NB Media office" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
             <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
               <h3 className="text-xl font-bold mb-2">Behind the scene</h3>
               <p className="text-nbgray text-sm">Peek behind the scenes — where deadlines meet dance breaks.</p>
@@ -235,7 +235,7 @@ const Index = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-nbdark via-transparent to-transparent z-10"></div>
             <img src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0" alt="NB Media studio" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
             <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-              <h3 className="text-xl font-bold mb-2">Studio Magic</h3>
+              <h3 className="text-xl font-bold mb-2">Fun Activities</h3>
               <p className="text-nbgray text-sm">State-of-the-art equipment for top-tier content production.</p>
             </div>
           </div>

@@ -262,7 +262,8 @@ const About = () => {
               {/* <div className="absolute inset-0 bg-gradient-to-br from-nborange to-nbyellow opacity-20 rounded-2xl transform rotate-3 will-change-transform"></div> */}
               <div className="relative aspect-square rounded-2xl overflow-hidden parallax-container">
                 <OptimizedImage 
-                  src="/lovable-uploads/18bb5ad0-b108-4ced-a976-89362974ea1a.png"
+                  // src="/lovable-uploads/meet_our_founder.jpg"
+                  src="\lovable-uploads\meet_our_founder.png"
                   alt="NB Media Founder" 
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105 parallax-element"
                   data-speed="0.05"

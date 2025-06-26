@@ -9,7 +9,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 // Define types for posts
 type InstagramPost =
   | { id: number; type: 'image'; imageUrl: string; caption: string }
-  | { id: number; type: 'video'; videoUrl: string; thumbnailUrl: string; caption: string };
+  | { id: number; type: 'video'; videoUrl: string;  caption: string };
 
 const InstagramFeedSection: React.FC = () => {
   const [activePost, setActivePost] = useState<number | null>(null);
@@ -23,43 +23,37 @@ const InstagramFeedSection: React.FC = () => {
       id: 1,
       type: 'video',
       videoUrl: '/videos/nbmedia_video1.mp4',
-      thumbnailUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c',
-      caption: 'Team brainstorming session! #creativity #nbmedia',
+      caption: 'Meet our Furry friend Coco ❤️🐾...',
     },
     {
       id: 2,
       type: 'video',
       videoUrl: '/videos/nbmedia_video2.mp4',
-      thumbnailUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c',
-      caption: 'A day in the life at NB Media. #dayinthelife #nbmedia',
+      caption: 'Snacks time <3 😋🍝🌮...',
     },
     {
       id: 3,
       type: 'video',
-      videoUrl: '/videos/nbmedia_video1.mp4',
-      thumbnailUrl: 'https://images.unsplash.com/photo-1525130413817-d45c1d127c42',
-      caption: 'Friday celebrations are a must! #weekendvibes',
+      videoUrl: '/videos/nbmedia_video3.mp4',
+      caption: 'FTrip to Kerela ✈️🌴❣️...',
     },
     {
       id: 4,
       type: 'video',
-      videoUrl: '/videos/nbmedia_video2.mp4',
-      thumbnailUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c',
-      caption: 'Behind the scenes of our latest shoot. #behindthescenes',
+      videoUrl: '/videos/nbmedia_video4.mp4',
+      caption: 'A day to remember ❤️🏆...',
     },
     {
       id: 5,
       type: 'video',
-      videoUrl: '/videos/nbmedia_video1.mp4',
-      thumbnailUrl: 'https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f',
-      caption: 'When you find the perfect lighting ✨ #studiolife',
+      videoUrl: '/videos/nbmedia_video5.mp4',
+      caption: 'The best feeling at work ❤️😁...',
     },
     {
       id: 6,
       type: 'video',
-      videoUrl: '/videos/nbmedia_video2.mp4',
-      thumbnailUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c',
-      caption: 'New things are coming, stay tuned! #announcement',
+      videoUrl: '/videos/nbmedia_video6.mp4',
+      caption: 'Dinner date with CEO 🥰...',
     },
   ];
 
