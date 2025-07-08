@@ -126,11 +126,11 @@ const Index = () => {
           </p>
           
           <div className="flex justify-center mt-12 opacity-0 animate-fade-in" style={{ animationDelay: "2.4s", animationFillMode: "forwards" }}>
-            <Link to="/careers" className="w-auto">
+            <a href="https://ytmoney.keka.com/careers/" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-gradient-to-r from-nborange to-nbyellow text-white font-medium px-8 py-6 rounded-md transition-all duration-500 hover:shadow-glow hover:scale-105">
                 Join Our Team
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -224,7 +224,7 @@ const Index = () => {
           
           <div className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
             <div className="absolute inset-0 bg-gradient-to-t from-nbdark via-transparent to-transparent z-10"></div>
-            <img src="/lovable-uploads/behind.png" alt="NB Media office" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+            <img src="/lovable-uploads/behind_the_scene_index.jpg" alt="NB Media office" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
             <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
               <h3 className="text-xl font-bold mb-2">Behind the scene</h3>
               <p className="text-nbgray text-sm">Peek behind the scenes — where deadlines meet dance breaks.</p>
@@ -233,7 +233,7 @@ const Index = () => {
           
           <div className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
             <div className="absolute inset-0 bg-gradient-to-t from-nbdark via-transparent to-transparent z-10"></div>
-            <img src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0" alt="NB Media studio" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+            <img src="/lovable-uploads/funactivity.jpg" alt="NB Media studio" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
             <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
               <h3 className="text-xl font-bold mb-2">Fun Activities</h3>
               <p className="text-nbgray text-sm">State-of-the-art equipment for top-tier content production.</p>
@@ -250,6 +250,12 @@ const Index = () => {
         </div>
       </Section>
       
+
+
+      {/* FAQs Section */}
+      <FAQ />
+
+
       {/* CTA Careers */}
       <Section id="careers-teaser" className="relative overflow-hidden" padding="lg">
         <div className="absolute inset-0 bg-gradient-to-r from-nborange/20 to-nbyellow/20"></div>
@@ -260,28 +266,27 @@ const Index = () => {
           <p className="text-lg text-nbgray mb-10">
             Join our team of creators, dreamers, and innovators who are redefining the content landscape.
           </p>
-          <Link to="/careers">
+          <a href="https://ytmoney.keka.com/careers/" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-gradient-to-r from-nborange to-nbyellow text-white font-medium px-10 py-6 rounded-md transition-all duration-300 hover:shadow-glow hover:scale-105 text-xl">
               View Open Positions
             </Button>
-          </Link>
+          </a>
         </div>
       </Section>
       
-      {/* FAQs Section */}
-      <FAQ />
+      
       
       {/* Join Our Team Button - Moved from Footer */}
-      <Section padding="lg" maxWidth="7xl" className="text-center flex items-center justify-center">
+      {/* <Section padding="lg" maxWidth="7xl" className="text-center flex items-center justify-center">
         <div className="w-full flex justify-center">
-          <Link to="/careers" className="w-auto">
+          <a href="https://ytmoney.keka.com/careers/" target="_blank" rel="noopener noreferrer" className="w-auto">
             <Button size="lg" className="bg-gradient-to-r from-nborange to-nbyellow text-white font-medium px-8 py-6 rounded-md transition-all duration-500 hover:shadow-glow hover:scale-105 flex items-center gap-2">
               <BriefcaseBusiness className="w-5 h-5" />
               Join Our Team
             </Button>
-          </Link>
+          </a>
         </div>
-      </Section>
+      </Section> */}
       
       <Footer />
       

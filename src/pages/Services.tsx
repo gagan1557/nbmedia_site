@@ -163,7 +163,7 @@ const Services = () => {
         </Section>
         
         {/* CTA Section */}
-        <Section padding="lg" spacing="md">
+        {/* <Section padding="lg" spacing="md">
           <div className="max-w-3xl mx-auto text-center hidden-element opacity-0 animate-fade-in" style={{animationDelay: "2.2s", animationFillMode: "forwards"}}>
             <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">
               Ready to <span className="text-gradient">Transform</span> Your YouTube Channel?
@@ -177,7 +177,7 @@ const Services = () => {
               </button>
             </div>
           </div>
-        </Section>
+        </Section> */}
       </div>
       
       <Footer />

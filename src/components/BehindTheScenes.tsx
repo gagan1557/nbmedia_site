@@ -15,7 +15,7 @@ const BehindTheScenes: React.FC = () => {
         <div className="relative rounded-xl overflow-hidden group">
           <div className="absolute inset-0 bg-gradient-to-t from-nbdark via-transparent to-transparent opacity-50 z-10"></div>
           <img 
-            src="/lovable-uploads/behind_the_scene.png" 
+            src="/lovable-uploads/IMG_2652.jpg" 
             alt="Chocolate Day Fun at Office" 
             className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-110"
           />

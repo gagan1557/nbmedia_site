@@ -135,27 +135,9 @@ const Careers = () => {
               </Card>)}
           </div>
         </Section>
-        
-        {/* Join Us CTA */}
-        <Section className="bg-gradient-to-r from-nborange/20 to-nbyellow/20 backdrop-blur-sm">
-          <div className="max-w-3xl mx-auto text-center hidden-element opacity-0 animate-fade-in" style={{
-          animationDelay: "0.8s",
-          animationFillMode: "forwards"
-        }}>
-            <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">
-              Ready to <span className="text-gradient">join</span> the team?
-            </h2>
-            <p className="text-lg mb-10 text-nbgray">
-              Check out our open positions and apply now. We can't wait to see what you'll create with us!
-            </p>
-            <a href="https://ytmoney.keka.com/careers/" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-gradient-to-r from-nborange to-nbyellow text-white font-medium px-14 py-8 text-xl rounded-md transition-all duration-300 hover:shadow-lg hover:scale-105">
-                Join Now
-              </Button>
-            </a>
-          </div>
-        </Section>
-        
+
+
+
         {/* FAQ Section */}
         <Section>
           <h2 className="text-3xl md:text-4xl font-bold font-display mb-8 text-center hidden-element opacity-0 animate-fade-in" style={{
@@ -179,9 +161,34 @@ const Careers = () => {
             </Accordion>
           </div>
         </Section>
+
+
+
+        
+        {/* Join Us CTA */}
+        <Section className="bg-gradient-to-r from-nborange/20 to-nbyellow/20 backdrop-blur-sm">
+          <div className="max-w-3xl mx-auto text-center hidden-element opacity-0 animate-fade-in" style={{
+          animationDelay: "0.8s",
+          animationFillMode: "forwards"
+        }}>
+            <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">
+              Ready to <span className="text-gradient">join</span> the team?
+            </h2>
+            <p className="text-lg mb-10 text-nbgray">
+              Check out our open positions and apply now. We can't wait to see what you'll create with us!
+            </p>
+            <a href="https://ytmoney.keka.com/careers/" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-gradient-to-r from-nborange to-nbyellow text-white font-medium px-14 py-8 text-xl rounded-md transition-all duration-300 hover:shadow-lg hover:scale-105">
+                Join Now
+              </Button>
+            </a>
+          </div>
+        </Section>
+        
+        
         
         {/* Final CTA */}
-        <Section>
+        {/* <Section>
           <div className="max-w-xl mx-auto text-center hidden-element opacity-0 animate-fade-in" style={{
           animationDelay: "1.4s",
           animationFillMode: "forwards"
@@ -198,7 +205,7 @@ const Careers = () => {
               </Button>
             </a>
           </div>
-        </Section>
+        </Section> */}
       </div>
       
       <Footer />

@@ -209,7 +209,7 @@ const About = () => {
                     ) : index === 5 ? (
                       <div className="h-full w-full rounded-lg overflow-hidden transition-transform hover:scale-[1.02] duration-500">
                         <OptimizedImage 
-                          src="/lovable-uploads/18bb5ad0-b108-4ced-a976-89362974ea1a.png" 
+                          src="\lovable-uploads\meet_our_founder.png"
                           alt="NB Media Today - Team Members" 
                           className="w-full h-full object-cover rounded-lg"
                         />
@@ -263,7 +263,8 @@ const About = () => {
               <div className="relative aspect-square rounded-2xl overflow-hidden parallax-container">
                 <OptimizedImage 
                   // src="/lovable-uploads/meet_our_founder.jpg"
-                  src="\lovable-uploads\meet_our_founder.png"
+                  
+                  src="\lovable-uploads\18bb5ad0-b108-4ced-a976-89362974ea1a.png"
                   alt="NB Media Founder" 
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105 parallax-element"
                   data-speed="0.05"
@@ -309,11 +310,11 @@ const About = () => {
           animationDelay: "3s",
           animationFillMode: "forwards"
         }}>
-            <Link to="/careers">
+            <a href="https://ytmoney.keka.com/careers/" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-gradient-to-r from-nborange to-nbyellow text-white font-medium px-8 py-6 rounded-md transition-all duration-300 hover:shadow-lg hover:scale-105">
                 Join Our Team
               </Button>
-            </Link>
+            </a>
           </div>
         </Section>
       </div>

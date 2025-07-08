@@ -14,14 +14,14 @@ const LifeAtNBCTA: React.FC = () => {
         <p className="text-lg mb-8 text-nbgray">
           We're always looking for creative minds to join our team. If you're passionate about content creation and want to work in a fun, fast-paced environment, we want to hear from you!
         </p>
-        <Link to="/careers">
+        <a href="https://ytmoney.keka.com/careers/" target="_blank" rel="noopener noreferrer">
           <Button 
             size="lg" 
             className="bg-gradient-to-r from-nborange to-nbyellow text-white font-medium px-12 py-6 rounded-md transition-all duration-300 hover:shadow-lg hover:scale-105"
           >
             Apply Now
           </Button>
-        </Link>
+        </a>
       </div>
     </Section>
   );

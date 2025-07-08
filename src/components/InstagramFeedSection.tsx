@@ -29,7 +29,7 @@ const InstagramFeedSection: React.FC = () => {
       id: 2,
       type: 'video',
       videoUrl: '/videos/nbmedia_video2.mp4',
-      caption: 'Snacks time <3 😋🍝🌮...',
+      caption: 'Welcome to NB Media, Mohali — where work feels like a vibe! 🎧💼',
     },
     {
       id: 3,
@@ -41,7 +41,7 @@ const InstagramFeedSection: React.FC = () => {
       id: 4,
       type: 'video',
       videoUrl: '/videos/nbmedia_video4.mp4',
-      caption: 'A day to remember ❤️🏆...',
+      caption: 'Welcome to NB Media, Mohali — where work feels like a vibe! 🎧💼',
     },
     {
       id: 5,
@@ -208,7 +208,7 @@ const InstagramFeedSection: React.FC = () => {
           href="https://www.instagram.com/nbmediaa/" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-gradient font-medium cursor-hover px-6 py-3 rounded-full border border-nborange/50 hover:border-nborange transition-all duration-300"
+          className="inline-flex items-center text-gradient font-medium cursor-hover px-5 py-3 rounded-full border border-nborange/50 hover:border-nborange transition-all duration-300"
         >
           Follow us on Instagram
           <Instagram className="w-4 h-4" />
