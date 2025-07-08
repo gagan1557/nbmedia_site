@@ -60,7 +60,8 @@ const Footer: React.FC = () => {
           <div className="md:text-right">
             <h3 className="text-white font-bold mb-4">Contact</h3>
             <ul className="space-y-3">
-              <li className="text-nbgray">hrd@nbmediaproductions.com</li>
+              <a href="mailto:hrd@nbmediaproductions.com"><li className="text-nbgray hover:underline cursor-pointer">hrd@nbmediaproductions.com</li>
+              </a>
               <li className="text-nbgray">
                 +91 7018029708
               </li>
