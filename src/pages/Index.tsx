@@ -216,7 +216,7 @@ const Index = () => {
           <div className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
             <div className="absolute inset-0 bg-gradient-to-t from-nbdark via-transparent to-transparent z-10"></div>
             {/* <OptimizedImage src="/lovable-uploads/TEAM CULTURE.jpg" alt="NB Media team culture" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" /> */}
-            <img src="/lovable-uploads/TEAM CULTURE1.jpg" alt="NB Media team culture" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+            <img src="/lovable-uploads/TEAM CULTURE2.jpg" alt="NB Media team culture" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
             <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
               <h3 className="text-xl font-bold mb-2">Team Culture</h3>
               <p className="text-nbgray text-sm">Where creativity meets collaboration in a dynamic environment.</p>
@@ -225,7 +225,7 @@ const Index = () => {
           
           <div className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
             <div className="absolute inset-0 bg-gradient-to-t from-nbdark via-transparent to-transparent z-10"></div>
-            <img src="/lovable-uploads/behind_the_scene_index1.jpg" alt="NB Media office" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+            <img src="/lovable-uploads/behind_the_scene_index2.jpg" alt="NB Media office" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
             <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
               <h3 className="text-xl font-bold mb-2">Behind the scene</h3>
               <p className="text-nbgray text-sm">Peek behind the scenes — where deadlines meet dance breaks.</p>
@@ -234,7 +234,7 @@ const Index = () => {
           
           <div className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
             <div className="absolute inset-0 bg-gradient-to-t from-nbdark via-transparent to-transparent z-10"></div>
-            <img src="/lovable-uploads/funactivity1.jpg" alt="NB Media studio" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+            <img src="/lovable-uploads/funactivity2.jpg" alt="NB Media studio" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
             <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
               <h3 className="text-xl font-bold mb-2">Fun Activities</h3>
               <p className="text-nbgray text-sm">State-of-the-art equipment for top-tier content production.</p>
