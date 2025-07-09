@@ -167,7 +167,7 @@ const About = () => {
                     {index === 0 ? (
                       <div className="h-full w-full rounded-lg overflow-hidden transition-transform hover:scale-[1.02] duration-500">
                         <OptimizedImage 
-                          src="/lovable-uploads/ab954229-a185-4be5-95b1-8d9a1456d46c.png" 
+                          src="/lovable-uploads/YEAR2020.png" 
                           alt="NB Media in 2020 - The Beginning" 
                           className="w-full h-full object-cover rounded-lg"
                           priority={index <= 1} // Only prioritize first two images
@@ -176,7 +176,7 @@ const About = () => {
                     ) : index === 1 ? (
                       <div className="h-full w-full rounded-lg overflow-hidden transition-transform hover:scale-[1.02] duration-500">
                         <OptimizedImage 
-                          src="/lovable-uploads/2339c01b-c8c6-445f-88aa-4b2bfc2a5148.png" 
+                          src="/lovable-uploads/YEAR2021.png" 
                           alt="YouTube Play Buttons - First Million" 
                           className="w-full h-full object-cover rounded-lg"
                           priority={index <= 1}
@@ -185,7 +185,7 @@ const About = () => {
                     ) : index === 2 ? (
                       <div className="h-full w-full rounded-lg overflow-hidden transition-transform hover:scale-[1.02] duration-500">
                         <OptimizedImage 
-                          src="/lovable-uploads/2d63caf7-5c54-4e4f-99bd-d626e0523cb8.png" 
+                          src="/lovable-uploads/YEAR2022.png" 
                           alt="NB Media Office - First Office" 
                           className="w-full h-full object-cover rounded-lg"
                         />
@@ -193,7 +193,7 @@ const About = () => {
                     ) : index === 3 ? (
                       <div className="h-full w-full rounded-lg overflow-hidden transition-transform hover:scale-[1.02] duration-500">
                         <OptimizedImage 
-                          src="/lovable-uploads/ff567d46-2f67-4473-bc30-665c08f5db46.png" 
+                          src="/lovable-uploads/YEAR2023.png" 
                           alt="NB Media Global Team - Global Expansion" 
                           className="w-full h-full object-cover rounded-lg"
                         />
@@ -201,7 +201,7 @@ const About = () => {
                     ) : index === 4 ? (
                       <div className="h-full w-full rounded-lg overflow-hidden transition-transform hover:scale-[1.02] duration-500">
                         <OptimizedImage 
-                          src="/lovable-uploads/acee3d0b-7b77-4b17-8a4e-de5415c3f2a0.png" 
+                          src="/lovable-uploads/YEAR2024.png" 
                           alt="NB Media Chandigarh Headquarters" 
                           className="w-full h-full object-cover rounded-lg"
                         />
@@ -209,7 +209,7 @@ const About = () => {
                     ) : index === 5 ? (
                       <div className="h-full w-full rounded-lg overflow-hidden transition-transform hover:scale-[1.02] duration-500">
                         <OptimizedImage 
-                          src="\lovable-uploads\meet_our_founder.png"
+                          src="\lovable-uploads\YEAR2025.png"
                           alt="NB Media Today - Team Members" 
                           className="w-full h-full object-cover rounded-lg"
                         />
@@ -264,7 +264,7 @@ const About = () => {
                 <OptimizedImage 
                   // src="/lovable-uploads/meet_our_founder.jpg"
                   
-                  src="\lovable-uploads\18bb5ad0-b108-4ced-a976-89362974ea1a.png"
+                  src="\lovable-uploads\FOUNDER.png"
                   alt="NB Media Founder" 
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105 parallax-element"
                   data-speed="0.05"
