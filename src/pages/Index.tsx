@@ -215,7 +215,6 @@ const Index = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 hidden-element">
           <div className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
             <div className="absolute inset-0 bg-gradient-to-t from-nbdark via-transparent to-transparent z-10"></div>
-            {/* <OptimizedImage src="/lovable-uploads/TEAM CULTURE.jpg" alt="NB Media team culture" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" /> */}
             <img src="/lovable-uploads/TEAM CULTURE2.jpg" alt="NB Media team culture" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
             <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
               <h3 className="text-xl font-bold mb-2">Team Culture</h3>
