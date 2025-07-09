@@ -158,16 +158,16 @@ const Index = () => {
           
           <div className="grid grid-cols-2 gap-4 md:gap-6 hidden-element">
             <div className="aspect-square rounded-lg overflow-hidden">
-              <img alt="Team collaboration" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" src="/lovable-uploads/62735034-729d-42a0-b187-75b7055634d7.jpg" />
+              <img alt="Team collaboration" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" src="/lovable-uploads/one.jpg" />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden translate-y-8">
-              <img alt="Content planning" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" src="/lovable-uploads/e910660d-46fb-4ba2-a505-e463f7bc0cc7.png" />
+              <img alt="Content planning" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" src="/lovable-uploads/two.png" />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden -translate-y-8">
-              <img alt="Video production" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" src="/lovable-uploads/56914e69-e5d4-4c14-8655-02dca619bdae.jpg" />
+              <img alt="Video production" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" src="/lovable-uploads/three.jpg" />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden">
-              <img alt="Equipment setup" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" src="/lovable-uploads/b16f164a-d784-45dd-ab2c-789efd190844.jpg" />
+              <img alt="Equipment setup" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" src="/lovable-uploads/four.jpg" />
             </div>
           </div>
         </div>
@@ -215,7 +215,8 @@ const Index = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 hidden-element">
           <div className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
             <div className="absolute inset-0 bg-gradient-to-t from-nbdark via-transparent to-transparent z-10"></div>
-            <OptimizedImage src="/lovable-uploads/TEAM CULTURE.jpg" alt="NB Media team culture" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+            {/* <OptimizedImage src="/lovable-uploads/TEAM CULTURE.jpg" alt="NB Media team culture" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" /> */}
+            <img src="/lovable-uploads/TEAM CULTURE1.jpg" alt="NB Media team culture" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
             <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
               <h3 className="text-xl font-bold mb-2">Team Culture</h3>
               <p className="text-nbgray text-sm">Where creativity meets collaboration in a dynamic environment.</p>
@@ -224,7 +225,7 @@ const Index = () => {
           
           <div className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
             <div className="absolute inset-0 bg-gradient-to-t from-nbdark via-transparent to-transparent z-10"></div>
-            <img src="/lovable-uploads/behind_the_scene_index.jpg" alt="NB Media office" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+            <img src="/lovable-uploads/behind_the_scene_index1.jpg" alt="NB Media office" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
             <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
               <h3 className="text-xl font-bold mb-2">Behind the scene</h3>
               <p className="text-nbgray text-sm">Peek behind the scenes — where deadlines meet dance breaks.</p>
@@ -233,7 +234,7 @@ const Index = () => {
           
           <div className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
             <div className="absolute inset-0 bg-gradient-to-t from-nbdark via-transparent to-transparent z-10"></div>
-            <img src="/lovable-uploads/funactivity.jpg" alt="NB Media studio" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+            <img src="/lovable-uploads/funactivity1.jpg" alt="NB Media studio" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
             <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
               <h3 className="text-xl font-bold mb-2">Fun Activities</h3>
               <p className="text-nbgray text-sm">State-of-the-art equipment for top-tier content production.</p>
