@@ -22,37 +22,37 @@ const InstagramFeedSection: React.FC = () => {
     {
       id: 1,
       type: 'video',
-      videoUrl: '/videos/nbmedia_video1.mp4',
+      videoUrl: '/videos/nbmedia_video10.mp4',
       caption: 'Meet our Furry friend Coco ❤️🐾...',
     },
     {
       id: 2,
       type: 'video',
-      videoUrl: '/videos/nbmedia_video2.mp4',
+      videoUrl: '/videos/nbmedia_video20.mp4',
       caption: 'Welcome to NB Media, Mohali — where work feels like a vibe! 🎧💼',
     },
     {
       id: 3,
       type: 'video',
-      videoUrl: '/videos/nbmedia_video3.mp4',
+      videoUrl: '/videos/nbmedia_video30.mp4',
       caption: 'FTrip to Kerela ✈️🌴❣️...',
     },
     {
       id: 4,
       type: 'video',
-      videoUrl: '/videos/nbmedia_video4.mp4',
+      videoUrl: '/videos/nbmedia_video40.mp4',
       caption: 'Welcome to NB Media, Mohali — where work feels like a vibe! 🎧💼',
     },
     {
       id: 5,
       type: 'video',
-      videoUrl: '/videos/nbmedia_video5.mp4',
+      videoUrl: '/videos/nbmedia_video50.mp4',
       caption: 'The best feeling at work ❤️😁...',
     },
     {
       id: 6,
       type: 'video',
-      videoUrl: '/videos/nbmedia_video6.mp4',
+      videoUrl: '/videos/nbmedia_video60.mp4',
       caption: 'Dinner date with CEO 🥰...',
     },
   ];
